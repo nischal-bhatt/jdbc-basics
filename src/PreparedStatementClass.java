@@ -33,6 +33,14 @@ public class PreparedStatementClass {
 		ps.executeUpdate();
 		
 		
+		PreparedStatement ps2 = con.prepareStatement("update pubneshwar set emp_name=? where emp_id = ?");
+		ps2.setString(1, "nish");
+		ps2.setInt(2,101);
+		int numOfRowsAffected=ps2.executeUpdate();
+		
+		PreparedStatement ps3 = con.prepareStatement("delete from pubneshwar where emp_id = ?");
+		ps3.setInt(1, 102);
+		ps3.executeUpdate();
 		
 		System.out.println("hi");
 	}
